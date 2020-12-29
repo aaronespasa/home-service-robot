@@ -46,9 +46,14 @@ And run the following commands:
 ```$ gazebo myworld```
 
 ## Components
-### World
-### Models
+### House (Building)
+![Building](https://github.com/aaronespasa/home-service-robot/blob/main/assets/House.png)
+### Robot
+![Robot](https://github.com/aaronespasa/home-service-robot/blob/main/assets/Robot.png)
 ### Plugins
+When the world is opened, the program displays on the terminal a welcome message.
 
+### World
+It contains the House, the Robot and the plugin.
 
 #### Made with ❤️ by Aarón Espasandín

@@ -15,3 +15,6 @@ build/
 
 # Visual studio code folder
 .vscode/
+
+# Gazebo models
+gazebo_models/

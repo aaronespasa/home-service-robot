@@ -2,7 +2,8 @@
 <sdf version='1.7'>
   <model name='Robot'>
     <model name='Car'>
-      <link name='link_1'>
+      <!-- Main platform -->
+      <link name='main_platform'>
         <inertial>
           <mass>1</mass>
           <inertia>
@@ -31,15 +32,16 @@
             <lighting>1</lighting>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
+              <name>Gazebo/Orange</name>
             </script>
             <shader type='pixel'>
               <normal_map>__default__</normal_map>
             </shader>
+            <!-- First 3 numbers are: red/gree/blue -->
             <ambient>0.3 0.3 0.3 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.01 0.01 0.01 1</specular>
-            <emissive>0 0 0 1</emissive>
+            <diffuse>1 0.6 0.7 1</diffuse>
+            <specular>1 0.6 0.01 1</specular>
+            <emissive>1 0.4 0 1</emissive>
           </material>
           <transparency>0</transparency>
           <cast_shadows>1</cast_shadows>
@@ -100,7 +102,9 @@
           </surface>
         </collision>
       </link>
-      <link name='link_2_clone_0_clone'>
+
+      <!-- Wheels -->
+      <link name='wheel_1'>
         <inertial>
           <mass>1</mass>
           <inertia>
@@ -200,7 +204,7 @@
           </surface>
         </collision>
       </link>
-      <link name='link_2_clone_0_clone_clone'>
+      <link name='wheel_2'>
         <inertial>
           <mass>1</mass>
           <inertia>
@@ -300,7 +304,7 @@
           </surface>
         </collision>
       </link>
-      <link name='link_2_clone_0_clone_clone_0'>
+      <link name='wheel_3'>
         <inertial>
           <mass>1</mass>
           <inertia>
@@ -400,7 +404,7 @@
           </surface>
         </collision>
       </link>
-      <link name='link_2_clone_0_clone_clone_1'>
+      <link name='wheel_4'>
         <inertial>
           <mass>1</mass>
           <inertia>
@@ -500,9 +504,10 @@
           </surface>
         </collision>
       </link>
-      <joint name='link_1_JOINT_10' type='revolute'>
-        <parent>link_1</parent>
-        <child>link_2_clone_0_clone_clone_0</child>
+      <!-- Joints -->
+      <joint name='wheel_1_JOINT' type='revolute'>
+        <parent>main_platform</parent>
+        <child>wheel_1</child>
         <pose>0 0 0 0 -0 0</pose>
         <axis>
           <xyz>0 0 1</xyz>
@@ -531,9 +536,9 @@
           </ode>
         </physics>
       </joint>
-      <joint name='link_1_JOINT_11' type='revolute'>
-        <parent>link_1</parent>
-        <child>link_2_clone_0_clone_clone_1</child>
+      <joint name='wheel_2_JOINT' type='revolute'>
+        <parent>main_platform</parent>
+        <child>wheel_2</child>
         <pose>0 0 0 0 -0 0</pose>
         <axis>
           <xyz>0 0 1</xyz>
@@ -562,9 +567,9 @@
           </ode>
         </physics>
       </joint>
-      <joint name='link_1_JOINT_8' type='revolute'>
-        <parent>link_1</parent>
-        <child>link_2_clone_0_clone</child>
+      <joint name='wheel_3_JOINT' type='revolute'>
+        <parent>main_platform</parent>
+        <child>wheel_3</child>
         <pose>0 0 0 0 -0 0</pose>
         <axis>
           <xyz>0 0 1</xyz>
@@ -593,9 +598,9 @@
           </ode>
         </physics>
       </joint>
-      <joint name='link_1_JOINT_9' type='revolute'>
-        <parent>link_1</parent>
-        <child>link_2_clone_0_clone_clone</child>
+      <joint name='wheel_4_JOINT' type='revolute'>
+        <parent>main_platform</parent>
+        <child>wheel_4</child>
         <pose>0 0 0 0 -0 0</pose>
         <axis>
           <xyz>0 0 1</xyz>
